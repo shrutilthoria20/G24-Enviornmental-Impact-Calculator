@@ -2,7 +2,7 @@
 "use client";
 import React, { useState } from 'react';
 
-function Chatbot({ onClose }) {
+function Chatbot({ onClose =()=>{}}) {
   const [userInput, setUserInput] = useState('');
   const [chatHistory, setChatHistory] = useState([]);
 
