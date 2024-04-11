@@ -2,8 +2,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSession } from "next-auth/react";
 import { Page, Text, View, Document, StyleSheet, PDFViewer, Path  } from '@react-pdf/renderer';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { Svg } from '@react-pdf/renderer';
 
 // Create styles
