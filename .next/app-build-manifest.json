@@ -1,0 +1,62 @@
+{
+  "pages": {
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/page.css",
+      "static/chunks/app/page.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
+    ],
+    "/Blogs/Residency/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/Blogs/Residency/page.css",
+      "static/chunks/app/Blogs/Residency/page.js"
+    ],
+    "/Blogs/Motorbike/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/Blogs/Motorbike/page.css",
+      "static/chunks/app/Blogs/Motorbike/page.js"
+    ],
+    "/Blogs/SelfTransport/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/Blogs/SelfTransport/page.css",
+      "static/chunks/app/Blogs/SelfTransport/page.js"
+    ],
+    "/Blogs/Car/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/Blogs/Car/page.css",
+      "static/chunks/app/Blogs/Car/page.js"
+    ],
+    "/Blogs/PublicTransport/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/Blogs/PublicTransport/page.css",
+      "static/chunks/app/Blogs/PublicTransport/page.js"
+    ],
+    "/Blogs/Flight/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/Blogs/Flight/page.css",
+      "static/chunks/app/Blogs/Flight/page.js"
+    ],
+    "/ShowResultModule/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/ShowResultModule/page.js"
+    ],
+    "/Download-pdf/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/Download-pdf/page.js"
+    ]
+  }
+}
