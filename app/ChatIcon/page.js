@@ -1,4 +1,5 @@
 // Chat Icon Component
+"use client";
 import React from 'react';
 
 function ChatIcon({ onClick =()=>{}}) {
