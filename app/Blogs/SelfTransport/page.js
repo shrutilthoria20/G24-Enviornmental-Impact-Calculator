@@ -8,14 +8,21 @@ import Link from "next/link";
 
 const usePersistentState = (key, defaultValue) => {
   const [value, setValue] = useState(() => {
-    const storedValue = localStorage.getItem(key);
-    return storedValue !== null ? storedValue : defaultValue;
+    // Check if window is defined (i.e., if the code is running on the client side)
+    if (typeof window !== 'undefined') {
+      const storedValue = localStorage.getItem(key);
+      return storedValue !== null ? storedValue : defaultValue;
+    }
+    // If window is not defined (e.g., during server-side rendering), return default value
+    return defaultValue;
   });
 
   const handleChange = (newValue) => {
     // const parsedValue = !isNaN(newValue) ? parseInt(newValue, 10) : newValue;
-    setValue(newValue);
-    localStorage.setItem(key, newValue);
+   if (typeof window !== 'undefined') {
+      setValue(newValue);
+      localStorage.setItem(key, newValue);
+    }
     
   };
 
