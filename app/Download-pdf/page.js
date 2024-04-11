@@ -242,6 +242,9 @@ const MyDocument = ({ session }) => {
 
 const page = () => {
   const { data: session } = useSession();
+  if (typeof window === 'undefined') {
+    return null; // Return null if rendering on the server-side
+  }
   return (
     <div>
     <PDFViewer className='h-screen w-full'>
