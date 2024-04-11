@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import Link from "next/link";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from 'next/navigation';
 
@@ -13,31 +13,39 @@ import { useRouter } from 'next/navigation';
 
 const usePersistentState = (key, defaultValue) => {
   const [value, setValue] = useState(() => {
-    const storedValue = localStorage.getItem(key); 
-    console.log("Local stored : ",storedValue);   
-    return storedValue !== null ? storedValue : defaultValue;
+    // Check if window is defined (i.e., if the code is running on the client side)
+    if (typeof window !== 'undefined') {
+      const storedValue = localStorage.getItem(key);
+      return storedValue !== null ? storedValue : defaultValue;
+    }
+    // If window is not defined (e.g., during server-side rendering), return default value
+    return defaultValue;
   });
   
   const handleChange = (newValue) => {
-    setValue(newValue);
-    localStorage.setItem(key, newValue);
+    if (typeof window !== 'undefined') {
+      setValue(newValue);
+      localStorage.setItem(key, newValue);
+    }
   };
 
   return [value, handleChange];
 };
 
 const get_all_data = () =>{  
-  const localStorageData = {};
-  for (let i = 0; i < localStorage.length; i++) {
-    const key = localStorage.key(i);
-    const value = localStorage.getItem(key);
-    const parsedValue = !isNaN(value) ? parseInt(value, 10) : value;
-    localStorageData[key] = parsedValue;
+  if (typeof window !== 'undefined') {
+    const localStorageData = {};
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      const value = localStorage.getItem(key);
+      const parsedValue = !isNaN(value) ? parseInt(value, 10) : value;
+      localStorageData[key] = parsedValue;
+    }
+
+    console.log("Local : ",localStorageData);
+    return (localStorageData);
   }
-
-  console.log("Local : ",localStorageData);
-  return (localStorageData);
-
+  return {};
 }
 
 const sendData = async(e) =>{  
@@ -73,9 +81,19 @@ const Blogs = () => {
   };
 
   const {data: session } = useSession();
-  localStorage.setItem('username',session?.user?.name);
-  console.log("Data session : ",session?.user?.name);
+  // localStorage.setItem('username',session?.user?.name);
+  // console.log("Data session : ",session?.user?.name);
   // usePersistentState('username',session?.user?.name);
+
+  useEffect(() => {
+    if (session?.user?.name) {
+      if (typeof window !== 'undefined') {
+      localStorage.setItem('username', session.user.name);
+      console.log("Data session : ", session.user.name);
+      }
+    }
+  }, [session]);
+
 
   const handleRangeChange = (e) => {
     setSelectedRange(parseInt(e.target.value, 10));
