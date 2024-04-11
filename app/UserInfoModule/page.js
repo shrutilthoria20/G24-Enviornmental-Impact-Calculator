@@ -1,12 +1,16 @@
 "use client";
-
+import { useEffect } from "react";
 import { signOut } from "next-auth/react";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 
 export default function UserInfo() {
   const { status,data: session } = useSession();
-  localStorage.setItem("username",session?.user?.name)
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem("username", session?.user?.name);
+    }
+  }, [session]);
     
   if (status === "authenticated") {
     return (
