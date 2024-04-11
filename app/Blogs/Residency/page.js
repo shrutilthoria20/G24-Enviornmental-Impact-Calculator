@@ -29,18 +29,23 @@ const Blogs = () => {
 
   useEffect(() => {
     // Retrieve selected value from localStorage on component mount
-    const storedValue = localStorage.getItem('selectedRadioValue');
-    if (storedValue) {
-      setSelectedValue(storedValue);
+    if (typeof window !== 'undefined') {
+      // Retrieve selected value from localStorage on component mount
+      const storedValue = localStorage.getItem('selectedRadioValue');
+      if (storedValue) {
+        setSelectedValue(storedValue);
+      }
     }
   }, []);
 
   const handleChange = (e) => {
     const { value } = e.target;
     // Update selected value and store it in localStorage
-    setSelectedValue(value);
-    localStorage.setItem('selectedRadioValue', value);
-    console.log(value);
+    if (typeof window !== 'undefined') {
+      setSelectedValue(value);
+      localStorage.setItem('selectedRadioValue', value);
+      console.log(value);
+    }
   };
   return (
     <>
