@@ -40,15 +40,18 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 12,
     marginBottom: 5,
+    fontWeight:'bold',
   },
-  listItem: {
+  listItem: {    
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'flex-start', // Adjust alignment to start from the top
     marginBottom: 3,
+    flexWrap: 'wrap',
   },
   listItemText: {
     fontSize: 12,
-    marginLeft: 5,
+    marginLeft: 5,    
+    flex: 1,
   },
   head:{
     alignItems: 'center', // Center items vertically
@@ -95,13 +98,11 @@ const MyDocument = ({ session }) => {
     <>
     {resultData.map((t, index) => (
   <Document>
-  <Page style={styles.page} size="A4" orientation="portrait" >
+  <Page style={styles.page} size="A3" orientation="portrait" >
 
     <View style={styles.head}>
           <Text style={styles.title}>Your Carbon Footprint</Text>
-          <Text style={styles.subtitle}>Result</Text>
-          {/* <Svg viewBox='0 0 512 512' src="/cloud-svgrepo-com.svg" style={{ width: 50, height: 50, backgroundColor:'red', color:'black'   }}/> */}
-          
+          <Text style={styles.subtitle}>Result</Text>                    
     </View>
     
     <View style={styles.user_info}>
@@ -130,7 +131,7 @@ const MyDocument = ({ session }) => {
 
       <View style={styles.row}>
       <View style={styles.section}>
-      <Svg aria-hidden="true" fill="" viewBox="0 0 30 30" stroke="currentColor" style={{width:20,height:20}}>
+      <Svg aria-hidden="true"  viewBox="0 0 30 30" stroke="currentColor" style={{width:20,height:20}}>
                 <Path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M5.867 15.467c-1.173 0-2.133 0.96-2.133 2.133s0.96 2.133 2.133 2.133 2.133-0.96 2.133-2.133-0.96-2.133-2.133-2.133zM5.867 18.667c-0.587 0-1.067-0.48-1.067-1.067s0.48-1.067 1.067-1.067c0.587 0 1.067 0.48 1.067 1.067s-0.48 1.067-1.067 1.067z M22.933 15.467c-1.173 0-2.133 0.96-2.133 2.133s0.96 2.133 2.133 2.133c1.173 0 2.133-0.96 2.133-2.133s-0.96-2.133-2.133-2.133zM22.933 18.667c-0.587 0-1.067-0.48-1.067-1.067s0.48-1.067 1.067-1.067c0.587 0 1.067 0.48 1.067 1.067s-0.48 1.067-1.067 1.067z M25.12 11.2l-0.907-4.267c-0.373-1.387-1.44-2.133-2.88-2.133h-13.867c-1.493 0-2.347 0.747-2.773 2.133l-0.96 4.267h-3.733v1.067h3.467v0.053c-1.653 0.107-2.933 1.493-2.933 3.2v7.413h1.6v1.6c0 1.493 1.173 2.667 2.667 2.667s2.667-1.173 2.667-2.667v-1.6h13.867v1.6c0 1.493 1.173 2.667 2.667 2.667s2.667-1.173 2.667-2.667v-1.6h1.6v-7.413c0-1.653-1.28-3.040-2.88-3.2v-0.053h3.413v-1.067h-3.68zM5.707 7.253c0.32-0.96 0.8-1.387 1.76-1.387h13.867c1.013 0 1.6 0.427 1.867 1.333l1.067 5.12h-19.733l1.173-5.067zM6.4 24.533c0 0.907-0.693 1.6-1.6 1.6s-1.6-0.693-1.6-1.6v-1.6h3.2v1.6zM25.6 24.533c0 0.907-0.693 1.6-1.6 1.6s-1.6-0.693-1.6-1.6v-1.6h3.2v1.6zM27.2 15.52v6.347h-25.6v-6.347c0-1.173 0.96-2.133 2.133-2.133h21.333c1.173 0 2.133 0.96 2.133 2.133z" />
               </Svg>
         <Text style={styles.subtitle}>Car Emission</Text>
@@ -145,6 +146,10 @@ const MyDocument = ({ session }) => {
         <View style={styles.listItem}>
           <Text style={styles.text}>Travel Per Year:</Text>
           <Text style={styles.listItemText}>{t.car_travel_per_year}</Text>
+        </View>
+        <View style={styles.listItem}>
+          <Text style={styles.text}>Feedback :</Text>
+          <Text style={styles.listItemText}> {t.car_engine_type === 'Petrol' || t.car_engine_type === 'Diesel'  ? 'Try to use Electric or Bio-fuel vehical as it will not not emit large carbon' : 'It is good as you are using electic or bio-fuel vehical'}</Text>
         </View>
       </View>
       
@@ -164,6 +169,10 @@ const MyDocument = ({ session }) => {
         <View style={styles.listItem}>
           <Text style={styles.text}>Flight Per Year:</Text>
           <Text style={styles.listItemText}>{t.flight_per_year}</Text>
+        </View>
+        <View style={styles.listItem}>
+          <Text style={styles.text}>Feedback :</Text>
+          <Text style={styles.listItemText}> {t.flight_trip_type === 'Short-Haul' ? 'Instead you should use public transport train' : t.flight_trip_type === 'Medium-Haul' ? 'If not urget then please prefer pt_train' : ''}</Text>
         </View>
       </View>
       </View>  
@@ -187,6 +196,10 @@ const MyDocument = ({ session }) => {
           <Text style={styles.text}>Transport Per Week:</Text>
           <Text style={styles.listItemText}>{t.public_transport_per_week}</Text>
         </View>
+        <View style={styles.listItem}>
+          <Text style={styles.text}>Feedback :</Text>
+          <Text style={styles.listItemText}>Its good as you are using public transport when needed</Text>
+        </View>
       </View>
 
       <View style={styles.section}>
@@ -205,6 +218,10 @@ const MyDocument = ({ session }) => {
         <View style={styles.listItem}>
           <Text style={styles.text}>Travel Per Week:</Text>
           <Text style={styles.listItemText}>{t.motorbike_travel_per_year}</Text>
+        </View>
+        <View style={styles.listItem}>
+          <Text style={styles.text}>Feedback :</Text>
+          <Text style={styles.listItemText}>{t.motorbike_engine_type === 'Petrol' ? 'When distance is between 2-3 kms then you should use either walk or cycling. As it is good for health and also decreases carbon emission' : 'It is good as you are using electic vehical but When distance is between 2-3 kms then you should use either walk or cycling'}</Text>
         </View>
       </View>
       </View>
@@ -226,10 +243,11 @@ const MyDocument = ({ session }) => {
           <Text style={styles.text}>Travel Per Day:</Text>
           <Text style={styles.listItemText}>{t.slef_transport_travel_per_week}</Text>
         </View>
+        <View style={styles.listItem}>
+          <Text style={styles.text}>Feedback :</Text>
+          <Text style={styles.listItemText}>It is good for your health and also decreases carbon emission</Text>
+        </View>
       </View>
-
-
-    
   </Page>
 </Document>
   ))}
@@ -244,12 +262,12 @@ const page = () => {
     return null; // Return null if rendering on the server-side
   }
   return (
-    <div>
+  <div>
     <PDFViewer className='h-screen w-full'>
-    <MyDocument session={session} className='bg-black' />
-  </PDFViewer>
+    <MyDocument session={session} className='bg-black'/>
+    </PDFViewer>
   </div>
-  )
+  );
 }
 
-export default page
+export default page;
