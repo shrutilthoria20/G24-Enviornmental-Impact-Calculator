@@ -43,43 +43,13 @@ const Blogs = () => {
 
   return (
     <>
-      {/* <div
-        className="p-6 md:10 lg:p-12"
-        style={{
-          background:
-            "linear-gradient(rgba(48, 129, 195, 0.7), rgba(17, 136, 184, 0.8))",
-        }}
-      >
-        <div className="p-1 md:p-3">
-          <h2 className="text-center font-semibold text-xl md:text-2xl xl:text-3xl text-white  pt-12 md:pt-10 lg:pt-7">
-            Take Survey
-          </h2>
-          <h4 className=" text-white text-base md:text-lg xl:text-xl font-semibold text-center pt-1 pb-1 md:pb-2 lg:pb-4">
-          "Small steps, big change: reduce your ecological footprint"
-          </h4>
-        </div>
-      </div> */}
-      
-
-      <div className="justify-center cursor-pointer">
-      <Swiper
-        slidesPerView={1}
-        loop={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        modules={[Autoplay]}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
-      >
-      <SwiperSlide>
+      <div className="relative justify-center cursor-pointer h-screen w-screen">      
         
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center h-screen w-screen">
               <img
                 src="/assets/images/Self.png"
                 alt="Blurred Image"
-                className="w-full blur-sm"
+                className="w-screen h-screen object-fill"
               />
             </div>
             <div  className="absolute inset-12">
@@ -89,7 +59,7 @@ const Blogs = () => {
                 </h2>              
               </div>
               <div className="text-center">
-                <p className="text-gray-700 text-base md:text-xl xl:text-2xl font-semibold mt-6 mb-6 px-40 ">
+                <p className="text-gray-700 text-base md:text-xl xl:text-2xl font-semibold mt-6 mb-6 px-10 lg:px-40">
                   Which type of self transportation you often use ?
                 </p>
                 <div class="leading-tight font-semibold">
@@ -104,7 +74,7 @@ const Blogs = () => {
                 </div>
               </div>
               <div className="text-center">
-                <p className="text-gray-700 text-base md:text-xl xl:text-2xl font-semibold mt-6 mb-6 px-40 ">
+                <p className="text-gray-700 text-base md:text-xl xl:text-2xl font-semibold mt-6 mb-6 px-10 lg:px-40">
                   How far do you travel by self transportation each week ? 
                 </p>
                 
@@ -149,29 +119,27 @@ const Blogs = () => {
               </div>
 
               <div className="">
-                <div className="absolute top-1/2">
+                <div className="absolute top-1/2 left-10 transform -translate-y-1/2">
                   <Link href="/Blogs/Motorbike">
-                  <button className="border border-black rounded-xl p-2 hover:bg-green-700">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 ">
+                  <button className="border border-none rounded-full p-3  text-gray-800 font-semibold shadow-lg shadow-neutral-400 hover:shadow-red-800 transition duration-300 ease-in-out">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 hover:w-7 hover:h-7">
                   <path strokeLinecap="round" strokeLinejoin="round" d="m18.75 4.5-7.5 7.5 7.5 7.5m-6-15L5.25 12l7.5 7.5" />
                   </svg>
                   </button>
                   </Link>
                   </div>
 
-                  <div className="absolute top-1/2 right-0">
+                  <div className="absolute top-1/2 right-10 transform -translate-y-1/2">
                   <Link href="/Blogs/Car">
-                    <button className="border border-black rounded-xl p-2 hover:bg-green-700">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 ">
+                    <button className="border border-none rounded-full p-3  text-gray-800 font-semibold shadow-lg shadow-neutral-400 hover:shadow-green-800 transition duration-300 ease-in-out">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 hover:w-7 hover:h-7">
                     <path strokeLinecap="round" strokeLinejoin="round" d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5" />
                     </svg>
                     </button>
                   </Link>                  
                   </div>                                
               </div>          
-              
-        </SwiperSlide>
-        </Swiper>
+                      
       </div>
       </>
   );
