@@ -228,13 +228,28 @@ const Header = () => {
                   </li>
 
                   <li>
-                  <Link
-                    href="/LoginModule"
-                    className="font-semibold text-base  hover:text-[#1789b3] uppercase decoration-[2px] decoration-[#1789b3] underline-offset-4 cursor-pointer duration-300"
-                  >{" "}
-                    Login
-                  </Link>
-                  </li>
+              
+              {status === 'authenticated'?                        
+              (
+                
+              <button className="font-extrabold text-lg hover:text-[#1789b3] hover:underline uppercase decoration-[2px] decoration-[#1789b3] underline-offset-4 cursor-pointer duration-300 active:text-[#1789b3] text-red-500"
+              onClick={handleSignOut}
+              >                
+                Logout
+              
+            </button>
+            )              
+              :
+              (<Link
+                href="/LoginModule"
+                className="font-semibold text-lg hover:text-[#1789b3] hover:underline uppercase decoration-[2px] decoration-[#1789b3] underline-offset-4 cursor-pointer duration-300 active:text-[#1789b3] "
+                
+              >
+                Login
+                
+              </Link>)
+              }
+              </li>
             
                   <li>
                     <Link
