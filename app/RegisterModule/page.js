@@ -74,43 +74,42 @@ export default function SignUp() {
   return (
     <RootLayout showHeader={false} showFooter={false}>
     <section>
-      <div className="grid grid-cols-1 lg:grid-cols-2 h-max">
-        <div className="relative flex items-end px-4 pb-10 pt-60 sm:px-6 sm:pb-16 md:justify-center lg:px-8 lg:pb-24">
-          <div className="absolute inset-0">
-            <img
-              className="h-full w-full object-cover object-top max-w-full max-h-full"
-              // src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80"
-              src="/login.png"
-              alt=""
-            />
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
-          <div className="relative">
-            <div className="w-full max-w-xl xl:mx-auto xl:w-full xl:max-w-xl xl:pr-24 py-20">
-              <h3 className="text-4xl font-bold text-white">
-                Carbon Footprint
-              </h3>
-              <h2 className="text-white text-xl font-semibold mt-10">
-              “We are the first generation to feel the effect of climate change and the last generation who can do something about it.”
-              </h2>
-            </div>
-          </div>
+    <div className="grid grid-cols-1 lg:grid-cols-2 h-auto lg:h-screen">
+    <div className="relative flex items-end px-4 pb-10 pt-20 sm:px-6 sm:pb-16 md:justify-center lg:px-8 lg:pb-24">
+      <div className="absolute inset-0">
+        <img
+          className="h-full w-full object-cover object-top max-w-full max-h-full"
+          src="/login.png"
+          alt=""
+        />
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+      <div className="relative">
+        <div className="w-full max-w-xl xl:mx-auto xl:w-full xl:max-w-xl xl:pr-24 py-20">
+          <h3 className="text-4xl font-bold text-white">
+            Carbon Footprint
+          </h3>
+          <h2 className="text-white text-xl font-semibold mt-10">
+            “We are the first generation to feel the effect of climate change and the last generation who can do something about it.”
+          </h2>
         </div>
-        <div className="flex items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
-          <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
-            <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl">
-              Sign up
-            </h2>
-            <p className="mt-2 text-base text-gray-600">
-              Already have an account?
-              <Link
-                href="/LoginModule"
-                title=""
-                className="font-medium text-black transition-all duration-200 hover:underline ml-2"
-              >
-                Sign In
-              </Link>
-            </p>
+      </div>
+    </div>
+    <div className="flex items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
+      <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
+        <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl">
+          Sign up
+        </h2>
+        <p className="mt-2 text-base text-gray-600">
+          Already have an account?
+          <Link
+            href="/LoginModule"
+            title=""
+            className="font-medium text-black transition-all duration-200 hover:underline ml-2"
+          >
+            Sign In
+          </Link>
+        </p>
             <form className="mt-8" onSubmit={handleSubmit}>
               <div className="space-y-5">
                 <div>
