@@ -120,25 +120,13 @@ const Blogs = () => {
       </div> */}
       
 
-      <div className="justify-center cursor-pointer">
-      <Swiper
-        slidesPerView={1}
-        loop={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        modules={[Autoplay]}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
-      >
-      <SwiperSlide>
+      <div className="relative justify-center cursor-pointer h-screen w-screen">
         
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center h-screen w-screen">
               <img
                 src="/assets/images/Flight.png"
                 alt="Blurred Image"
-                className="w-full blur-sm"
+                className="w-screen h-screen object-fill"
               />
             </div>
             <div  className="absolute inset-12">
@@ -148,7 +136,7 @@ const Blogs = () => {
                 </h2>              
               </div>
               <div className="text-center">
-                <p className="text-gray-700 text-base md:text-xl xl:text-2xl font-semibold mt-6 mb-6 px-40 ">
+                <p className="text-gray-700 text-base md:text-xl xl:text-2xl font-semibold mt-6 mb-6 px-10 lg:px-40">
                   How long do you fly each year ? 
                 </p>
                 
@@ -172,7 +160,7 @@ const Blogs = () => {
 
               </div>
               <div className="text-center">
-                <p className="text-gray-700 text-base md:text-xl xl:text-2xl font-semibold mt-6 mb-6 px-40 ">
+                <p className="text-gray-700 text-base md:text-xl xl:text-2xl font-semibold mt-6 mb-6 px-10 lg:px-40">
                   How often you travel by flight each year ?
                 </p>
                 
@@ -190,7 +178,7 @@ const Blogs = () => {
                     />
                     <span>10</span>
                   </div>
-                  <span className="mt-2 text-gray-700">Numbers of flights {Flight_Range}</span>
+                  <span className="mt-2 text-white">Numbers of flights {Flight_Range}</span>
                   <style jsx>{`
                     /* Custom Styles */
                     .slider::-webkit-slider-thumb {
@@ -211,35 +199,37 @@ const Blogs = () => {
                       cursor: pointer;
                     }
                   `}</style>
+            
+                
                 </div>
 
               </div>
-              </div>          
+
+              </div>        
+             
               
 
-              <div className="">
-                <div className="absolute top-1/2">
+                    <div className="">
+                <div className="absolute top-1/2 left-10 transform -translate-y-1/2">
                   <Link href="/Blogs/PublicTransport">
-                  <button className="border border-black rounded-xl p-2 hover:bg-green-700">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 ">
+                  <button className="border border-none rounded-full p-3 text-gray-800 font-semibold shadow-lg shadow-neutral-400 hover:shadow-red-800 transition duration-300 ease-in-out">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 hover:w-7 hover:h-7">
                   <path strokeLinecap="round" strokeLinejoin="round" d="m18.75 4.5-7.5 7.5 7.5 7.5m-6-15L5.25 12l7.5 7.5" />
                   </svg>
                   </button>
                   </Link>
-                  </div>
+                </div>
 
-                <div className="absolute top-1/2 right-0">
-                <Link href="/ShowResultModule">
-                  <button className="border border-black rounded-xl p-2 hover:bg-green-700" onClick={handleShowResult}>
-                  Show Result
-                  </button>
-                </Link>                  
-                </div>                                
-              </div>
-                          
-          
-        </SwiperSlide>
-        </Swiper>
+                <div className="absolute top-1/2 right-10 transform -translate-y-1/2">
+              
+                  <Link href="/ShowResultModule">
+                    <button className="border border-none rounded-full p-3 text-black font-semibold shadow-lg shadow-neutral-400 hover:shadow-green-800 transition duration-300 ease-in-out hover:p-4 bg-white">
+                      Show Result
+                    </button>
+                  </Link>                  
+                  </div>
+                  </div>
+                                
       </div>
       </>
   );
