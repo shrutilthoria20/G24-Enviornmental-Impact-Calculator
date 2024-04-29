@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import RootLayout from "../layout";
+import { signIn } from "next-auth/react";
 
 export default function SignUp() {
   const [name, setName] = useState("");
@@ -63,6 +64,12 @@ export default function SignUp() {
     } catch (error) {
       console.log("Error during registration: ", error);
     }
+    }
+  const googleLogin = async () => {
+    await signIn("google", {
+      callbackUrl: "/",
+      redirect: true,
+    });
   };
   return (
     <RootLayout showHeader={false} showFooter={false}>
@@ -202,7 +209,7 @@ export default function SignUp() {
               <button
                 type="button"
                 className="relative inline-flex w-full items-center justify-center rounded-md border border-gray-400 bg-white px-3.5 py-2.5 font-semibold text-gray-700 transition-all duration-200 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black focus:outline-none"                
-                
+                onClick={googleLogin}
               >
                 <span className="mr-2 inline-block"></span>
                 <Image
