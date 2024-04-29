@@ -36,7 +36,7 @@ export async function POST(request) {
   const encryptedEmail = crypt.encrypt(user.email);
 
   const url = `${process.env.APP_URL}/ResetPasswordModule/${encryptedEmail}?signature=${randomStr}`;
-
+  console.log("URL :",url)
   try {
     const html = render(
       ForgotPasswordEmail({
