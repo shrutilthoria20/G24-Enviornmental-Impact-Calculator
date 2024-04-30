@@ -33,7 +33,7 @@ const usePersistentState = (key, defaultValue) => {
 
 const Blogs = () => {
   const [Car_Radio, setSelectedRadio] = usePersistentState('Car_Radio', );
-  const [Car_Range, setSelectedRange] = usePersistentState('Car_Range', 5000);
+  const [Car_Range, setSelectedRange] = usePersistentState('Car_Range', 0);
 
   const handleRadioChange = (e) => {
     setSelectedRadio(e.target.value);
