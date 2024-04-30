@@ -223,7 +223,7 @@ const Blogs = () => {
                 <div className="absolute top-1/2 right-10 transform -translate-y-1/2">
               
                   <Link href="/ShowResultModule">
-                    <button className="border border-none rounded-full p-3 text-black font-semibold shadow-lg shadow-neutral-400 hover:shadow-green-800 transition duration-300 ease-in-out hover:p-4 bg-white">
+                    <button className="border border-none rounded-full p-3 text-black font-semibold shadow-lg shadow-neutral-400 hover:shadow-green-800 transition duration-300 ease-in-out hover:p-4 bg-white" onClick={handleShowResult}>
                       Show Result
                     </button>
                   </Link>                  
