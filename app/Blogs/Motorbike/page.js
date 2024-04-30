@@ -35,7 +35,7 @@ const usePersistentState = (key, defaultValue) => {
 const Blogs = () => {
   
   const [Motor_Radio, setSelectedRadio] = usePersistentState('Motor_Radio', );
-  const [Motor_Range, setSelectedRange] = usePersistentState('Motor_Range', 5000);
+  const [Motor_Range, setSelectedRange] = usePersistentState('Motor_Range', 0);
 
   const handleRadioChange = (e) => {
     setSelectedRadio(e.target.value);
