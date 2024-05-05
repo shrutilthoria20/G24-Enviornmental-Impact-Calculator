@@ -52,7 +52,7 @@ const Footer = () => {
         <ul className="flex flex-col items-start gap-1">
           <li>
             <Link
-              href="/Services/WebDevelopment"
+              
               className=" text-base hover:text-[#1789b3]  cursor-pointer"
             >
               Car footprint
@@ -60,7 +60,7 @@ const Footer = () => {
           </li>
           <li>
             <Link
-              href="/Services/GameDevelopment"
+              
               className="text-base hover:text-[#1789b3] cursor-pointer"
             >
               Flight footprint
@@ -68,7 +68,7 @@ const Footer = () => {
           </li>
           <li>
             <Link
-              href="/Services/AppDevelopment"
+              
               className="text-base hover:text-[#1789b3]  cursor-pointer"
             >
               Motorbike footprint
@@ -76,7 +76,7 @@ const Footer = () => {
           </li>
           <li>
             <Link
-              href="/Services/WebsiteDesign"
+              
               className="text-base hover:text-[#1789b3]  cursor-pointer"
             >
               Public transport footprint
@@ -84,7 +84,7 @@ const Footer = () => {
           </li>
           <li>
             <Link
-              href="/Services/SoftwareDevelopment"
+              
               className="text-base hover:text-[#1789b3]  cursor-pointer"
             >
               Self transport footprint
