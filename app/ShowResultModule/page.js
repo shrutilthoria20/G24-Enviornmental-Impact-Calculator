@@ -30,7 +30,7 @@ export default function show_result_module() {
           });
       }, []);
 
-  return (            
+  return (        
     <>
     {resultData.map((t, index) => ( 
      <div key={index}>
@@ -66,6 +66,8 @@ export default function show_result_module() {
             </div>            
         </div>
 
+        
+
         <section className="grid sm:grid-clos-1 md:grid-cols-2 gap-10">
           <div className="flex items-center p-8 bg-white shadow rounded-lg w-auto">
             <div className="inline-flex flex-shrink-0 items-center justify-center h-16 w-16 text-purple-600 bg-purple-100 rounded-full mr-6">
@@ -76,9 +78,9 @@ export default function show_result_module() {
             <div>
               <span className="block text-2xl font-bold">Car Emission</span>
               <span className="block text-gray-500">
-                <p>Emission: {t.car_emission}</p>
-                <p>Engine Type:{t.car_engine_type}</p>
-                <p>Travel Per Year:{t.car_travel_per_year}</p>
+                <p>Emission: {t.car_emission} Kg Co2</p>
+                <p>Engine Type: {t.car_engine_type}</p>
+                <p>Travel Per Year: {t.car_travel_per_year} Kms</p>
                 <p><b>Feedback :</b> {t.car_engine_type === 'Petrol' | t.car_engine_type === 'Diesel'  ? 'Try to use Electric or Bio-fuel vehical as it will not not emit large carbon' : 'It is good as you are using electic or bio-fuel vehical'}</p>
               </span>
             </div>
@@ -92,7 +94,7 @@ export default function show_result_module() {
             <div>
               <span className="block text-2xl font-bold">Flight Emission</span>
               <span className="block text-gray-500">
-                <p>Emission: {t.flight_emission}</p>
+                <p>Emission: {t.flight_emission} Kg Co2</p>
                 <p>Trip Type: {t.flight_trip_type}</p>
                 <p>Flights Per Year: {t.flight_per_year}</p>
                 <p><b>Feedback :</b> {t.flight_trip_type === 'Short-Haul' ? 'Instead you should use public transport train' : t.flight_trip_type === 'Medium-Haul' ? 'If not urget then please prefer pt_train' : ''}</p>
@@ -108,9 +110,9 @@ export default function show_result_module() {
             <div>
               <span className="inline-block text-2xl font-bold">Public Transport Emission</span>              
               <span className="block text-gray-500">
-                <p>Emission: {t.pt_emission}</p>
+                <p>Emission: {t.pt_emission} Kg Co2</p>
                 <p>Transport Type: {t.public_transport_type}</p>
-                <p>Per Week: {t.public_transport_per_week}</p>
+                <p>Per Week: {t.public_transport_per_week} Kms</p>
                 <p><b>Feedback :</b> Its good as you are using public transport when needed</p>
               </span>
             </div>
@@ -124,9 +126,9 @@ export default function show_result_module() {
             <div>
               <span className="block text-2xl font-bold">Motorbike Emission</span>
               <span className="block text-gray-500">
-                <p>Emission: {t.motorbike_emission}</p>
+                <p>Emission: {t.motorbike_emission} Kg Co2</p>
                 <p>Engine Type: {t.motorbike_engine_type}</p>
-                <p>Travel Per Year: {t.motorbike_travel_per_year}</p>
+                <p>Travel Per Year: {t.motorbike_travel_per_year} Kms</p>
                 <p><b>Feedback :</b> {t.motorbike_engine_type === 'Petrol' ? 'When distance is between 2-3 kms then you should use either walk or cycling. As it is good for health and also decreases carbon emission' : 'It is good as you are using electic vehical but When distance is between 2-3 kms then you should use either walk or cycling'}</p>
               </span>
             </div>
@@ -140,20 +142,38 @@ export default function show_result_module() {
             <div>
               <span className="block text-2xl font-bold">Self Transport Emission</span>
               <span className="block text-gray-500">
-                <p>Emission: {t.st_emission}</p>
+                <p>Emission: {t.st_emission} Kg Co2</p>
                 <p>Transport Type: {t.self_transport_type}</p>
-                <p>Travel Per Day: {t.self_transport_travel_per_day}</p>
+                <p>Travel Per Day: {t.self_transport_travel_per_day} Kms</p>
                 <p><b>Feedback :</b> It is good for your health and also decreases carbon emission</p>
               </span>
             </div>
-          </div>
+          </div>          
 
           <div>
           
           </div>
         </section>
         
-            
+        <div className="flex items-center p-8 bg-white shadow rounded-lg">
+            <div className="inline-flex flex-shrink-0 items-center justify-center h-16 w-16 text-purple-500 bg-purple-100 rounded-full mr-6">
+            <svg aria-hidden="true" fill="red" viewBox="0 0 1024 1024" stroke="currentColor" className="h-7 w-7">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M512 896a384 384 0 1 0 0-768 384 384 0 0 0 0 768zm0 64a448 448 0 1 1 0-896 448 448 0 0 1 0 896z M512 96a32 32 0 0 1 32 32v192a32 32 0 0 1-64 0V128a32 32 0 0 1 32-32zm0 576a32 32 0 0 1 32 32v192a32 32 0 1 1-64 0V704a32 32 0 0 1 32-32zM96 512a32 32 0 0 1 32-32h192a32 32 0 0 1 0 64H128a32 32 0 0 1-32-32zm576 0a32 32 0 0 1 32-32h192a32 32 0 1 1 0 64H704a32 32 0 0 1-32-32z" />
+              </svg>            
+            </div>
+            <div>
+              <span className="block text-2xl font-bold">How to Overcome Your Enviornmental Impact</span>
+              <span className="block text-gray-500">
+                <p>Number of Tress you should plant to Offset your Carbon Footprint ... <b>{t.trees_needed}</b></p>
+                <p><b>Total Co2 Emission :</b> {t.total_emission} Kg Co2</p>
+                <p style={{ whiteSpace: 'pre-line' }}>{(t.avg_annual_red > 0)? ((t.avg_annual_red < t.total_emission) ? `Average Annual Emissions Reduction Required to Reach Net-Zero by 2050 is ${t.avg_annual_red} Kg CO2 equivalent.
+                Your emissions exceed the average annual reduction required to reach net-zero emissions by 2050. Further efforts are needed to align with sustainable targets.
+                ` :'') :'Your emissions are already at or below the level required for net-zero emissions by 2050.'}</p>                
+              </span>
+            </div>            
+        </div>
+
+          
 
         <div className='flex justify-center pt-3 mt-16'>
               <Link href="/Download-pdf" target='_blank' rel='noopener noreferrer'>              
@@ -174,6 +194,7 @@ export default function show_result_module() {
       </main>
 </div>
 ))} 
+
 </>
 
   );
