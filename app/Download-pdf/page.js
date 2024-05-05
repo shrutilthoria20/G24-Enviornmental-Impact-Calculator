@@ -21,11 +21,18 @@ const styles = StyleSheet.create({
     border: '1px solid black',
     padding: 10,
   },
+  user_info2: {
+    width: 'auto', // Adjust the width to fit two sections in a row with spacing
+    marginBottom: 10,
+    border: '1px solid black',
+    padding: 10,    
+    height:125,
+  },
   user_info: {
     width: 'auto', // Adjust the width to fit two sections in a row with spacing
     marginBottom: 10,
     border: '1px solid black',
-    padding: 10,
+    padding: 10,        
   },
   title: {
     fontSize: 24,
@@ -137,7 +144,7 @@ const MyDocument = ({ session }) => {
         <Text style={styles.subtitle}>Car Emission</Text>
         <View style={styles.listItem}>
           <Text style={styles.text}>Emission:</Text>
-          <Text style={styles.listItemText}>{t.car_emission}</Text>
+          <Text style={styles.listItemText}>{t.car_emission} Kg Co2</Text>
         </View>
         <View style={styles.listItem}>
           <Text style={styles.text}>Engine Type:</Text>
@@ -145,7 +152,7 @@ const MyDocument = ({ session }) => {
         </View>
         <View style={styles.listItem}>
           <Text style={styles.text}>Travel Per Year:</Text>
-          <Text style={styles.listItemText}>{t.car_travel_per_year}</Text>
+          <Text style={styles.listItemText}>{t.car_travel_per_year} Kms</Text>
         </View>
         <View style={styles.listItem}>
           <Text style={styles.text}>Feedback :</Text>
@@ -160,7 +167,7 @@ const MyDocument = ({ session }) => {
         <Text style={styles.subtitle}>Flight Emission</Text>
         <View style={styles.listItem}>
           <Text style={styles.text}>Emission:</Text>
-          <Text style={styles.listItemText}>{t.flight_emission}</Text>
+          <Text style={styles.listItemText}>{t.flight_emission} Kg Co2</Text>
         </View>
         <View style={styles.listItem}>
           <Text style={styles.text}>Trip Type:</Text>
@@ -186,7 +193,7 @@ const MyDocument = ({ session }) => {
         <Text style={styles.subtitle}>Public Transport Emission</Text>
         <View style={styles.listItem}>
           <Text style={styles.text}>Emission:</Text>
-          <Text style={styles.listItemText}>{t.pt_emission}</Text>
+          <Text style={styles.listItemText}>{t.pt_emission} Kg Co2</Text>
         </View>
         <View style={styles.listItem}>
           <Text style={styles.text}>Transport Type:</Text>
@@ -194,7 +201,7 @@ const MyDocument = ({ session }) => {
         </View>
         <View style={styles.listItem}>
           <Text style={styles.text}>Transport Per Week:</Text>
-          <Text style={styles.listItemText}>{t.public_transport_per_week}</Text>
+          <Text style={styles.listItemText}>{t.public_transport_per_week} Kms</Text>
         </View>
         <View style={styles.listItem}>
           <Text style={styles.text}>Feedback :</Text>
@@ -209,7 +216,7 @@ const MyDocument = ({ session }) => {
         <Text style={styles.subtitle}>Motorbike Emission</Text>
         <View style={styles.listItem}>
           <Text style={styles.text}>Emission:</Text>
-          <Text style={styles.listItemText}>{t.motorbike_emission}</Text>
+          <Text style={styles.listItemText}>{t.motorbike_emission} Kg Co2</Text>
         </View>
         <View style={styles.listItem}>
           <Text style={styles.text}>Engine Type:</Text>
@@ -217,7 +224,7 @@ const MyDocument = ({ session }) => {
         </View>
         <View style={styles.listItem}>
           <Text style={styles.text}>Travel Per Week:</Text>
-          <Text style={styles.listItemText}>{t.motorbike_travel_per_year}</Text>
+          <Text style={styles.listItemText}>{t.motorbike_travel_per_year} Kms</Text>
         </View>
         <View style={styles.listItem}>
           <Text style={styles.text}>Feedback :</Text>
@@ -233,7 +240,7 @@ const MyDocument = ({ session }) => {
         <Text style={styles.subtitle}>Self Transport Emission</Text>
         <View style={styles.listItem}>
           <Text style={styles.text}>Emission:</Text>
-          <Text style={styles.listItemText}>{t.st_emission}</Text>
+          <Text style={styles.listItemText}>{t.st_emission} Kg Co2</Text>
         </View>
         <View style={styles.listItem}>
           <Text style={styles.text}>Transport Type:</Text>
@@ -241,11 +248,39 @@ const MyDocument = ({ session }) => {
         </View>
         <View style={styles.listItem}>
           <Text style={styles.text}>Travel Per Day:</Text>
-          <Text style={styles.listItemText}>{t.slef_transport_travel_per_week}</Text>
+          <Text style={styles.listItemText}>{t.self_transport_travel_per_day} Kms</Text>
         </View>
         <View style={styles.listItem}>
           <Text style={styles.text}>Feedback :</Text>
           <Text style={styles.listItemText}>It is good for your health and also decreases carbon emission</Text>
+        </View>
+      </View>
+
+    <View style={styles.user_info2}>
+        
+    <Text style={styles.subtitle}>   
+    <Svg aria-hidden="true" fill="red" viewBox="0 0 1024 1024" stroke="currentColor" style={{width:20,height:20}}>
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M512 896a384 384 0 1 0 0-768 384 384 0 0 0 0 768zm0 64a448 448 0 1 1 0-896 448 448 0 0 1 0 896z M512 96a32 32 0 0 1 32 32v192a32 32 0 0 1-64 0V128a32 32 0 0 1 32-32zm0 576a32 32 0 0 1 32 32v192a32 32 0 1 1-64 0V704a32 32 0 0 1 32-32zM96 512a32 32 0 0 1 32-32h192a32 32 0 0 1 0 64H128a32 32 0 0 1-32-32zm576 0a32 32 0 0 1 32-32h192a32 32 0 1 1 0 64H704a32 32 0 0 1-32-32z" />
+    </Svg> 
+      How to Overcome Your Enviornmental Impact
+    </Text>
+        <View style={styles.listItem}>        
+          <Text style={styles.text}>            
+          Number of Tress you should plant to Offset your Carbon Footprint ... 
+            </Text>
+          <Text style={styles.listItemText}>{t.trees_needed}</Text>
+        </View>
+        <View style={styles.listItem}>   
+          <View>
+          <Text style={styles.text}>Total Co2 Emission : {t.total_emission} Kg Co2</Text>
+          </View>     
+          <View>
+          <Text style={{...styles.listItemText,wrap:'word'}}>          
+          {(t.avg_annual_red > 0)? ((t.avg_annual_red < t.total_emission) ? `Average Annual Emissions Reduction Required to Reach Net-Zero by 2050 is ${t.avg_annual_red} tons CO2 equivalent.
+          Your emissions exceed the average annual reduction required to reach net-zero emissions by 2050. Further efforts are needed to align with sustainable targets.
+                ` :'') :'YOur emissions are already at or below the level required for net-zero emissions by 2050.'}
+          </Text>
+          </View>
         </View>
       </View>
   </Page>
