@@ -30,6 +30,18 @@ const resultSchema = new mongoose.Schema(
         type: Number,
         required: true,        
     },        
+    trees_needed:{
+      type: Number,
+      required: true,        
+    },        
+    total_emission:{
+      type: Number,
+      required: true,        
+    },        
+    avg_annual_red:{
+      type: Number,
+      required: true,        
+    },          
   },
   { timestamps: true }
 );
