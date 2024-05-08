@@ -151,7 +151,7 @@ const MyDocument = ({ session }) => {
           <Text style={styles.listItemText}>{t.car_engine_type}</Text>
         </View>
         <View style={styles.listItem}>
-          <Text style={styles.text}>Travel Per Year:</Text>
+          <Text style={styles.text}>Travel Per Week:</Text>
           <Text style={styles.listItemText}>{t.car_travel_per_year} Kms</Text>
         </View>
         <View style={styles.listItem}>
