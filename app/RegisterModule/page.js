@@ -23,6 +23,10 @@ export default function SignUp() {
         setError("All fields are necessary.");
         return;
     }
+    if (!password.match(passwordRegex)) {
+      setError("Password must contain at least 8 characters, including at least one uppercase letter, one lowercase letter, one special character, and one number.");
+      return;
+    }
     try {
         const resUserExists = await fetch("api/userExists", {
         method: "POST",
