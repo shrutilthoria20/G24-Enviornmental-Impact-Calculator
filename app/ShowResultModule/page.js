@@ -80,7 +80,7 @@ export default function show_result_module() {
               <span className="block text-gray-500">
                 <p>Emission: {t.car_emission} Kg Co2</p>
                 <p>Engine Type: {t.car_engine_type}</p>
-                <p>Travel Per Year: {t.car_travel_per_year} Kms</p>
+                <p>Travel Per Week: {t.car_travel_per_year} Kms</p>
                 <p><b>Feedback :</b> {t.car_engine_type === 'Petrol' | t.car_engine_type === 'Diesel'  ? 'Try to use Electric or Bio-fuel vehical as it will not not emit large carbon' : 'It is good as you are using electic or bio-fuel vehical'}</p>
               </span>
             </div>
@@ -112,7 +112,7 @@ export default function show_result_module() {
               <span className="block text-gray-500">
                 <p>Emission: {t.pt_emission} Kg Co2</p>
                 <p>Transport Type: {t.public_transport_type}</p>
-                <p>Per Week: {t.public_transport_per_week} Kms</p>
+                <p>Travel Per Week: {t.public_transport_per_week} Kms</p>
                 <p><b>Feedback :</b> Its good as you are using public transport when needed</p>
               </span>
             </div>
@@ -128,7 +128,7 @@ export default function show_result_module() {
               <span className="block text-gray-500">
                 <p>Emission: {t.motorbike_emission} Kg Co2</p>
                 <p>Engine Type: {t.motorbike_engine_type}</p>
-                <p>Travel Per Year: {t.motorbike_travel_per_year} Kms</p>
+                <p>Travel Per Week: {t.motorbike_travel_per_year} Kms</p>
                 <p><b>Feedback :</b> {t.motorbike_engine_type === 'Petrol' ? 'When distance is between 2-3 kms then you should use either walk or cycling. As it is good for health and also decreases carbon emission' : 'It is good as you are using electic vehical but When distance is between 2-3 kms then you should use either walk or cycling'}</p>
               </span>
             </div>
