@@ -65,7 +65,7 @@ const sendData = async(e) =>{
 
 const Blogs = () => {
   const [Flight_Radio, setSelectedRadio] = usePersistentState('Flight_Radio', '');
-  const [Flight_Range, setSelectedRange] = usePersistentState('Flight_Range', 1);
+  const [Flight_Range, setSelectedRange] = usePersistentState('Flight_Range', 0);
   
   const router = useRouter();
 
@@ -169,7 +169,7 @@ const Blogs = () => {
                     <span>1</span>
                     <input
                       type="range"
-                      min="1"
+                      min="0"
                       max="10"
                       step="1"
                       value={Flight_Range}
