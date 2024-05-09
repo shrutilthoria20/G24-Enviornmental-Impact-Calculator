@@ -23,10 +23,13 @@ export default function SignUp() {
         setError("All fields are necessary.");
         return;
     }
+
+    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/;
     if (!password.match(passwordRegex)) {
       setError("Password must contain at least 8 characters, including at least one uppercase letter, one lowercase letter, one special character, and one number.");
       return;
     }
+    
     try {
         const resUserExists = await fetch("api/userExists", {
         method: "POST",
@@ -68,13 +71,15 @@ export default function SignUp() {
     } catch (error) {
       console.log("Error during registration: ", error);
     }
-    }
+
+    
+  }
   const googleLogin = async () => {
     await signIn("google", {
       callbackUrl: "/",
       redirect: true,
     });
-  };
+  }; 
   return (
     <RootLayout showHeader={false} showFooter={false}>
     <section>
@@ -192,8 +197,7 @@ export default function SignUp() {
                   </div>
                 </div>
                 <div>
-                  <button className="inline-flex w-full items-center justify-center rounded-md  px-3.5 py-2.5 font-semibold leading-7 text-white  bg-black/70 hover:bg-black/80"
-                        onClick={handleSubmit}>
+                  <button className="inline-flex w-full items-center justify-center rounded-md  px-3.5 py-2.5 font-semibold leading-7 text-white  bg-black/70 hover:bg-black/80">
                     Create Account
                   </button>
                 </div>
