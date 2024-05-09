@@ -192,7 +192,8 @@ export default function SignUp() {
                   </div>
                 </div>
                 <div>
-                  <button className="inline-flex w-full items-center justify-center rounded-md  px-3.5 py-2.5 font-semibold leading-7 text-white  bg-black/70 hover:bg-black/80">
+                  <button className="inline-flex w-full items-center justify-center rounded-md  px-3.5 py-2.5 font-semibold leading-7 text-white  bg-black/70 hover:bg-black/80"
+                        onClick={handleSubmit}>
                     Create Account
                   </button>
                 </div>
